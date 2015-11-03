@@ -159,7 +159,7 @@ for (int i=0; i<COUNT; i++){
  }
  if(b>=1280){
     gameState = a1;
-    h=floor(random(0,440));
+    h=floor(random(0,420));
   }
   break ;
   case a1 :
