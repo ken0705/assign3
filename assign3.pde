@@ -25,6 +25,7 @@ int d ;
 int e ;
 int f ;
 int g ;
+int h ;
 int x = 550;
 int y = 240;
 float speed = 5;
@@ -48,6 +49,7 @@ void setup(){
   d=floor(random(0,440));
   e=floor(random(0,420));
   f=floor(random(0,440));
+  h=floor(random(0,420));
   fill(255,0,0);
   rect(10,10,g,31);
   fighter=loadImage("img/fighter.png");
@@ -149,7 +151,7 @@ float  x1 = 0;
 
 for (int i=0; i<COUNT; i++){
    b += 1 ;
-  image(enemy,b+x1-640,220);
+  image(enemy,b+x1-640,h);
   x1 += spacingX;
 
  
@@ -157,6 +159,7 @@ for (int i=0; i<COUNT; i++){
  }
  if(b>=1280){
     gameState = a1;
+    h=floor(random(0,440));
   }
   break ;
   case a1 :
