@@ -26,6 +26,8 @@ int e ;
 int f ;
 int g ;
 int h ;
+int k ;
+int j ;
 int x = 550;
 int y = 240;
 float speed = 5;
@@ -50,6 +52,8 @@ void setup(){
   e=floor(random(0,420));
   f=floor(random(0,440));
   h=floor(random(0,420));
+  k=floor(random(0,120));
+  j=floor(random(0,120));
   fill(255,0,0);
   rect(10,10,g,31);
   fighter=loadImage("img/fighter.png");
@@ -115,13 +119,13 @@ void draw(){
   y=430; 
    }
 
- /* if(x>=c-45 && x<c+40 && y>=d-45 && y<=d+40){
+ if(x>=c-45 && x<c+40 && y>=d-45 && y<=d+40){
   c=floor(random(0,600));
   d=floor(random(0,440));
   image(treasure,c,d);   
-  g == 20;
+  g = 40;
   }
-  if(x>=b-45 && x<b+60 && y>=e-45 && y<=e+60){
+   /*if(x>=b-45 && x<b+60 && y>=e-45 && y<=e+60){
   b=0;    
   e=floor(random(0,440));
   image(treasure,b,e);   
@@ -201,14 +205,45 @@ for (int i=0; i<COUNT; i++){
   if( y >= 430 ){
   y=430; 
    }
-float spacingX2 = width/COUNT;
-float spacingY2 = height/COUNT;
+   if(x>=c-45 && x<c+40 && y>=d-45 && y<=d+40){
+  c=floor(random(0,600));
+  d=floor(random(0,440));
+  image(treasure,c,d);   
+  g = 40;
+  }
+   /*if(x>=b-45 && x<b+60 && y>=e-45 && y<=e+60){
+  b=0;    
+  e=floor(random(0,440));
+  image(treasure,b,e);   
+  b+=2;
+  g -= 40;
+  }
+  if(g>=200){
+    g=200;
+  }
+  if(e>y){
+    e-=2;
+  }
+  if(e==y){
+    b+=3;
+  }
+  if(e<y){
+    e+=2;
+  }
+
+  if(g<=0){
+    gameState = a1;
+  }
+    */
+
+float spacingX2 = 60;
+float spacingY2 = 60;
 float x2 = 0, y12 = 0;
 
 for (int i=0; i<COUNT; i++){
       b2 += 1 ;
   x2 = i*spacingX2;
-  image(enemy,x2+b2-640,y12);
+  image(enemy,x2+b2-640,y12+k);
   y12 += spacingY2;
 
 
@@ -216,6 +251,7 @@ for (int i=0; i<COUNT; i++){
  if(b2>=1280){
     gameState = a2;
     b=0;
+      k=floor(random(0,120));
   }
   break ;
     case a2 :
@@ -258,20 +294,52 @@ for (int i=0; i<COUNT; i++){
   if( y >= 430 ){
   y=430; 
    }
+   if(x>=c-45 && x<c+40 && y>=d-45 && y<=d+40){
+  c=floor(random(0,600));
+  d=floor(random(0,440));
+  image(treasure,c,d);   
+  g = 40;
+  }
+   /*if(x>=b-45 && x<b+60 && y>=e-45 && y<=e+60){
+  b=0;    
+  e=floor(random(0,440));
+  image(treasure,b,e);   
+  b+=2;
+  g -= 40;
+  }
+  if(g>=200){
+    g=200;
+  }
+  if(e>y){
+    e-=2;
+  }
+  if(e==y){
+    b+=3;
+  }
+  if(e<y){
+    e+=2;
+  }
+
+  if(g<=0){
+    gameState = a1;
+  }
+    */
+
 
 b3+=5;
-image(enemy,b3-640,200);
-image(enemy,b3-532,110);
-image(enemy,b3-424,20);
-image(enemy,b3-532,290);
-image(enemy,b3-424,380);
-image(enemy,b3-316,290);
-image(enemy,b3-316,110);
-image(enemy,b3-208,200);
+image(enemy,b3-640,120+j);
+image(enemy,b3-532,60+j);
+image(enemy,b3-424,0+j);
+image(enemy,b3-532,180+j);
+image(enemy,b3-424,240+j);
+image(enemy,b3-316,180+j);
+image(enemy,b3-316,60+j);
+image(enemy,b3-208,120+j);
 
 
  if(b3>=1280){
     gameState = GAME_RUN;
+      j=floor(random(0,120));
   }
 
   break ;  
